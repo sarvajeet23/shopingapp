@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:shopingapp/customer_screens/customer_order.dart';
 import 'package:shopingapp/customer_screens/wishlist.dart';
@@ -63,8 +63,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             const CircleAvatar(
                               radius: 50,
-                              backgroundImage:
-                                  AssetImage('images/inapp/guest.jpg'),
+                              backgroundImage: AssetImage('images/inapp/guest.jpg'),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 25),
@@ -118,8 +117,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: const Center(
                                 child: Text(
                                   'Cart',
-                                  style: TextStyle(
-                                      color: Colors.yellow, fontSize: 20),
+                                  style: TextStyle(color: Colors.yellow, fontSize: 20),
                                 ),
                               ),
                             )),
@@ -131,8 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const CustomerOrder()));
+                                      builder: (context) => const CustomerOrder()));
                             },
                             child: SizedBox(
                               height: 40,
@@ -140,8 +137,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: const Center(
                                 child: Text(
                                   'Order',
-                                  style: TextStyle(
-                                      color: Colors.black54, fontSize: 20),
+                                  style: TextStyle(color: Colors.black54, fontSize: 20),
                                 ),
                               ),
                             )),
@@ -159,8 +155,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const WishlistScreen()));
+                                      builder: (context) => const WishlistScreen()));
                             },
                             child: SizedBox(
                               height: 40,
@@ -168,8 +163,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: const Center(
                                 child: Text(
                                   'Wishlist',
-                                  style: TextStyle(
-                                      color: Colors.yellow, fontSize: 20),
+                                  style: TextStyle(color: Colors.yellow, fontSize: 20),
                                 ),
                               ),
                             )),
@@ -183,8 +177,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       const SizedBox(
                         height: 150,
-                        child:
-                            Image(image: AssetImage('images/inapp/logo.jpg')),
+                        child: Image(image: AssetImage('images/inapp/logo.jpg')),
                       ),
                       const ProfileHeaderLabel(
                         headerLabel: '  Account Info  ',
@@ -219,8 +212,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                         ),
                       ),
-                      const ProfileHeaderLabel(
-                          headerLabel: '  Account Setting  '),
+                      const ProfileHeaderLabel(headerLabel: '  Account Setting  '),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Container(

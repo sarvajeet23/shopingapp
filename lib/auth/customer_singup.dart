@@ -37,16 +37,12 @@ class _CustomerRegisterState extends State<CustomerRegister> {
   XFile? _imageFile;
   dynamic _pickedImageError;
 
-  CollectionReference customers =
-      FirebaseFirestore.instance.collection('customers');
+  CollectionReference customers = FirebaseFirestore.instance.collection('customers');
 
   void _pickImageFromCamera() async {
     try {
       final pickedImage = await _picker.pickImage(
-          source: ImageSource.camera,
-          maxHeight: 300,
-          maxWidth: 300,
-          imageQuality: 95);
+          source: ImageSource.camera, maxHeight: 300, maxWidth: 300, imageQuality: 95);
       setState(() {
         _imageFile = pickedImage;
       });
@@ -61,10 +57,7 @@ class _CustomerRegisterState extends State<CustomerRegister> {
   void _pickImageFromGallery() async {
     try {
       final pickedImage = await _picker.pickImage(
-          source: ImageSource.gallery,
-          maxHeight: 300,
-          maxWidth: 300,
-          imageQuality: 95);
+          source: ImageSource.gallery, maxHeight: 300, maxWidth: 300, imageQuality: 95);
       setState(() {
         _imageFile = pickedImage;
       });
@@ -83,9 +76,8 @@ class _CustomerRegisterState extends State<CustomerRegister> {
           await FirebaseAuth.instance
               .createUserWithEmailAndPassword(email: email, password: password);
 
-          firebase_storage.Reference ref = firebase_storage
-              .FirebaseStorage.instance
-              .ref('cust-images/$email.jpg');
+          firebase_storage.Reference ref =
+              firebase_storage.FirebaseStorage.instance.ref('cust-images/$email.jpg');
           ref.putFile(File(_imageFile!.path));
           _uid = FirebaseAuth.instance.currentUser!.uid;
 
@@ -170,8 +162,8 @@ class _CustomerRegisterState extends State<CustomerRegister> {
                       Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 40),
+                            padding:
+                                const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                             child: CircleAvatar(
                               radius: 60,
                               backgroundColor: Colors.purpleAccent,
